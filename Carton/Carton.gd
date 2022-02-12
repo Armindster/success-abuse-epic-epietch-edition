@@ -1,6 +1,6 @@
 extends Node2D
 
-var unpack = ["deadCat", "aliveCat", "airplane", "jam"] #add XddL w/ signal
+var unpack = ["deadCat", "aliveCat", "airplane", "jam"]
 var open = 0
 var upk = 0
 var remove
@@ -9,13 +9,16 @@ var func_called = true
 signal achievement
 signal empty
 
+func add_Xav_in_Carton():
+	unpack += "XDdL"
+
 func _on_CartonBody_clickBox():
-	if unpack.empty() and upk == 4 :
+	if unpack.empty() and upk == 5 :
 		print("I think there is nothing left to unpack.")
 		emit_signal("empty")
 	elif !unpack.empty():
 		if func_called:
-			open = randi() % 4
+			open = randi() % 5
 			if open == 1:
 				remove = unpack.pop_at(randi() % (unpack.size()))
 				print(remove)
