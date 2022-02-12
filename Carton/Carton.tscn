@@ -15,11 +15,9 @@ input_pickable = true
 script = ExtResource( 3 )
 
 [node name="CollisionCarton" type="CollisionShape2D" parent="CartonBody"]
-position = Vector2( 150.75, 526.25 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="CartonBody"]
-position = Vector2( 151, 526 )
 scale = Vector2( 3.01, 2.98 )
 texture = ExtResource( 2 )
 
