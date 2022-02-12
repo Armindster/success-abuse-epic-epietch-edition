@@ -134,10 +134,18 @@ func process_command(input: String) -> String:
 			return gorille()
 		"3615 fanta":
 			return fanta()
-		"3615 veronique":
+		"3615 véronique":
 			return veronique()
 		"3615 monique":
 			return monique()
+		"3615 briag":
+			return briag()
+		"3615 malo":
+			return malo()
+		"3615 noé":
+			return noe()
+		"3615 félix":
+			return felix()
 		"3615 annuaire":
 			return help()
 		_:
@@ -178,6 +186,30 @@ func monique() -> String:
 	emit_signal("monique")
 	return PoolStringArray([
 		Types.wrap_location_text(" Monique ")
+	]).join("\n")
+	
+func briag() -> String:
+	emit_signal("usul")
+	return PoolStringArray([
+		Types.wrap_location_text(" A été pris à Keimyung ")
+	]).join("\n")
+
+func malo() -> String:
+	emit_signal("usul")
+	return PoolStringArray([
+		Types.wrap_location_text(" A eu grade A au DevOps ")
+	]).join("\n")
+
+func noe() -> String:
+	emit_signal("usul")
+	return PoolStringArray([
+		Types.wrap_location_text(" A un chien et un chat ")
+	]).join("\n")
+	
+func felix() -> String:
+	emit_signal("usul")
+	return PoolStringArray([
+		Types.wrap_location_text(" A crée EPIETCH ")
 	]).join("\n")
 
 func help() -> String:
