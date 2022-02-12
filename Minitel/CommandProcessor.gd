@@ -44,6 +44,8 @@ var cx = 0
 var cy = 0
 var cz = 0
 
+var index = 0
+
 var Types = load("res://Minitel/globals/Types.gd").new()
 
 func initialize(user):
@@ -133,7 +135,8 @@ func process_command(input: String) -> String:
 		if (words[i] == "z" && cz == 0):
 			cpt += 1
 			cz = 1
-	if (cpt == 26):
+	if (cpt == 26 && index == 0):
+		index = 1
 		emit_signal("alphabet")
 		return Types.wrap_system_text("Unrecognized command - please try again.")
 	
