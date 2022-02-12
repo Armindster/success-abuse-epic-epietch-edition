@@ -3,6 +3,18 @@ extends Node
 var current_room = null
 var user = null
 
+signal godot
+signal gorille
+signal fanta
+signal veronique
+signal monique
+signal usul
+signal alphabet
+signal briag
+signal felix
+signal malo
+signal noe
+
 var cpt = 0
 
 var ca = 0
@@ -189,25 +201,25 @@ func monique() -> String:
 	]).join("\n")
 	
 func briag() -> String:
-	emit_signal("usul")
+	emit_signal("briag")
 	return PoolStringArray([
 		Types.wrap_location_text(" A été pris à Keimyung ")
 	]).join("\n")
 
 func malo() -> String:
-	emit_signal("usul")
+	emit_signal("malo")
 	return PoolStringArray([
 		Types.wrap_location_text(" A eu grade A au DevOps ")
 	]).join("\n")
 
 func noe() -> String:
-	emit_signal("usul")
+	emit_signal("noe")
 	return PoolStringArray([
 		Types.wrap_location_text(" A un chien et un chat ")
 	]).join("\n")
 	
 func felix() -> String:
-	emit_signal("usul")
+	emit_signal("felix")
 	return PoolStringArray([
 		Types.wrap_location_text(" A crée EPIETCH ")
 	]).join("\n")

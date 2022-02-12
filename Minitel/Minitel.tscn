@@ -8,9 +8,20 @@
 [sub_resource type="GDScript" id=6]
 script/source = "extends Control
 
-
 onready var game_info = $Background/MarginContainer/Columns/Rows/GameInfo
 onready var command_processor = $CommandProcessor
+
+signal godot
+signal gorille
+signal fanta
+signal veronique
+signal monique
+signal usul
+signal alphabet
+signal briag
+signal felix
+signal malo
+signal noe
 
 var Types = load(\"res://Minitel/globals/Types.gd\").new()
 
@@ -23,6 +34,39 @@ func _on_Input_text_entered(new_text: String) -> void:
 
 	var response = command_processor.process_command(new_text)
 	game_info.create_response_with_input(response, new_text)
+
+func _on_CommandProcessor_alphabet():
+	emit_signal(\"alphabet\")
+
+func _on_CommandProcessor_briag():
+	emit_signal(\"briag\")
+
+func _on_CommandProcessor_fanta():
+	emit_signal(\"fanta\")
+
+func _on_CommandProcessor_felix():
+	emit_signal(\"felix\")
+
+func _on_CommandProcessor_godot():
+	emit_signal(\"godot\")
+
+func _on_CommandProcessor_gorille():
+	emit_signal(\"gorille\")
+
+func _on_CommandProcessor_monique():
+	emit_signal(\"monique\")
+
+func _on_CommandProcessor_usul():
+	emit_signal(\"usul\")
+
+func _on_CommandProcessor_malo():
+	emit_signal(\"malo\")
+
+func _on_CommandProcessor_veronique():
+	emit_signal(\"veronique\")
+
+func _on_CommandProcessor_noe():
+	emit_signal(\"noe\")
 "
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -106,5 +150,17 @@ custom_styles/normal = SubResource( 5 )
 max_length = 48
 script = ExtResource( 1 )
 
+[connection signal="ready" from="." to="." method="_on_Game_ready"]
+[connection signal="alphabet" from="CommandProcessor" to="." method="_on_CommandProcessor_alphabet"]
+[connection signal="briag" from="CommandProcessor" to="." method="_on_CommandProcessor_briag"]
+[connection signal="fanta" from="CommandProcessor" to="." method="_on_CommandProcessor_fanta"]
+[connection signal="felix" from="CommandProcessor" to="." method="_on_CommandProcessor_felix"]
+[connection signal="godot" from="CommandProcessor" to="." method="_on_CommandProcessor_godot"]
+[connection signal="gorille" from="CommandProcessor" to="." method="_on_CommandProcessor_gorille"]
+[connection signal="malo" from="CommandProcessor" to="." method="_on_CommandProcessor_malo"]
+[connection signal="monique" from="CommandProcessor" to="." method="_on_CommandProcessor_monique"]
+[connection signal="noe" from="CommandProcessor" to="." method="_on_CommandProcessor_noe"]
+[connection signal="usul" from="CommandProcessor" to="." method="_on_CommandProcessor_usul"]
+[connection signal="veronique" from="CommandProcessor" to="." method="_on_CommandProcessor_veronique"]
 [connection signal="text_entered" from="Background/MarginContainer/Columns/Rows/InputArea/HBoxContainer/Input" to="." method="_on_Input_text_entered"]
 [connection signal="text_entered" from="Background/MarginContainer/Columns/Rows/InputArea/HBoxContainer/Input" to="Background/MarginContainer/Columns/Rows/InputArea/HBoxContainer/Input" method="_on_Input_text_entered"]
