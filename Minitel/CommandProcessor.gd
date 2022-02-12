@@ -174,7 +174,7 @@ func process_command(input: String) -> String:
 				return help()
 			_:
 				return Types.wrap_system_text("Unrecognized command - please try again.")
-	return Types.wrap_system_text("The minitel is not runnig")
+	return Types.wrap_location_text("The minitel is not runnig")
 
 func end() -> String:
 	emit_signal("end")
@@ -246,7 +246,8 @@ func felix() -> String:
 func help() -> String:
 	return PoolStringArray([
 		"You can use these commands: ",
-		Types.wrap_item_text(" 3615 godot "),
+		Types.wrap_item_text(" on "),
+		Types.wrap_item_text(" off "),
 		Types.wrap_item_text(" 3615 usul "),
 		Types.wrap_item_text(" 3615 gorille "),
 		Types.wrap_item_text(" 3615 fanta "),
