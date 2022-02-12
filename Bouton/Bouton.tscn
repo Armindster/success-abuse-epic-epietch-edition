@@ -12,10 +12,8 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="."]
-margin_left = 779.0
-margin_top = 278.0
-margin_right = 823.0
-margin_bottom = 316.0
+margin_right = 44.0
+margin_bottom = 38.0
 icon = ExtResource( 1 )
 flat = true
 __meta__ = {
