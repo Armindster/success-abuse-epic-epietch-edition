@@ -17,14 +17,14 @@ func _on_CartonBody_clickBox():
 		print("I think there is nothing left to unpack.")
 		emit_signal("empty")
 	elif !unpack.empty():
-		if func_called:
-			open = randi() % 5
-			if open == 1:
-				remove = unpack.pop_at(randi() % (unpack.size()))
-				print(remove)
-				upk += 1
-				emit_signal("achievement")
-				func_called = false
+		open = randi() % 5
+		print(func_called)
+		if func_called and open == 1:
+			remove = unpack.pop_at(randi() % (unpack.size()))
+			print(remove)
+			upk += 1
+			func_called = false
+			emit_signal("achievement")
 		else:
 			print("The box is empty...")
 
