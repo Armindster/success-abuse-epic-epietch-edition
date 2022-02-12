@@ -14,6 +14,7 @@ signal briag
 signal felix
 signal malo
 signal noe
+signal end
 
 var cpt = 0
 
@@ -141,10 +142,14 @@ func process_command(input: String) -> String:
 		emit_signal("alphabet")
 		return Types.wrap_system_text("Unrecognized command - please try again.")
 	
-	if (words == "3615 epietch" && index2 == 0):
+	if (words == "on" && index2 == 0):
 		index2 = 1
 		return godot()
-
+	
+	if (words == "off" && index2 == 1):
+		index2 = 0
+		return end()
+	
 	if (index2 == 1):
 		match words:
 			"3615 usul":
@@ -170,6 +175,12 @@ func process_command(input: String) -> String:
 			_:
 				return Types.wrap_system_text("Unrecognized command - please try again.")
 	return Types.wrap_system_text("The minitel is not start")
+
+func end() -> String:
+	emit_signal("end")
+	return PoolStringArray([
+		Types.wrap_location_text("The minitel is not working yet")
+	]).join("\n")
 
 func godot() -> String:
 	emit_signal("godot")
