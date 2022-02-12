@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Success Abuse : Epic Epietch Edition"
-run/main_scene="res://fax/Fax.tscn"
+run/main_scene="res://Game/GameScreen.tscn"
 config/icon="res://icon.png"
 
 [physics]
