@@ -1,5 +1,7 @@
 extends Node
 
+signal finished
+
 export (String, FILE) var filepath
 var file = File.new()
 var dict = {}
@@ -47,14 +49,12 @@ func modify_achievement(achievement, validate):
 		locked_style()
 		popup.get_node("Name").set_text(dict[achievement].name)
 		popup.get_node("Description").set_text("? ? ? ? ? ? ? ? ? ?")
+		animation()
 	else:
 		popup.get_node("Name").set_text(dict[achievement].name)
 		popup.get_node("Description").set_text(dict[achievement].description)
 		dict[achievement].accomplished = 1
-
-#func _on_Area2D_input_event(viewport, event, shape_idx):
-	#if event is InputEventMouseButton:
-		#popup.hide()
+		animation()
 
 func animation():
 	popup.show()
@@ -69,6 +69,7 @@ func _hide_popup():
 	Vector2(popup.rect_position[0] + 300, popup.rect_position[1]), tween.TRANS_ELASTIC, tween.EASE_IN)
 	tween.start()
 	yield(tween, "tween_completed")
+	emit_signal("finished")
 
 func _on_Timer_timeout():
 	_hide_popup()

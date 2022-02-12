@@ -39,9 +39,9 @@ filepath = "res://Toasts/achievement.json"
 
 [node name="Panel" type="Panel" parent="."]
 margin_left = -145.0
-margin_top = -50.0
+margin_top = -51.0
 margin_right = 145.0
-margin_bottom = 50.0
+margin_bottom = 49.0
 size_flags_horizontal = 9
 size_flags_vertical = 9
 custom_styles/panel = SubResource( 4 )
