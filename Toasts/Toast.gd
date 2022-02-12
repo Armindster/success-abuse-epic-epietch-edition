@@ -69,7 +69,7 @@ func _hide_popup():
 	Vector2(popup.rect_position[0] + 300, popup.rect_position[1]), tween.TRANS_ELASTIC, tween.EASE_IN)
 	tween.start()
 	yield(tween, "tween_completed")
-	emit_signal("finished")
+	emit_signal("finished", self)
 
 func _on_Timer_timeout():
 	_hide_popup()
