@@ -18,17 +18,18 @@ margin_right = 960.0
 margin_bottom = 384.0
 
 [node name="Carton" parent="." instance=ExtResource( 3 )]
+position = Vector2( 152, 528 )
 
 [node name="Telefax" parent="." instance=ExtResource( 1 )]
 position = Vector2( 272, 232 )
 
 [node name="Bouton" parent="." instance=ExtResource( 5 )]
-margin_left = 448.0
-margin_top = 352.0
-margin_right = 448.0
-margin_bottom = 352.0
+margin_left = 424.0
+margin_top = 344.0
+margin_right = 424.0
+margin_bottom = 344.0
 
-[node name="HBoxContainer" type="VBoxContainer" parent="."]
+[node name="ToastsContainer" type="VBoxContainer" parent="."]
 margin_left = 1178.0
 margin_top = 48.0
 margin_right = 1282.0
@@ -36,3 +37,18 @@ margin_bottom = 592.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[connection signal="alphabet" from="Minitel" to="." method="_on_Minitel_alphabet"]
+[connection signal="briag" from="Minitel" to="." method="_on_Minitel_briag"]
+[connection signal="fanta" from="Minitel" to="." method="_on_Minitel_fanta"]
+[connection signal="felix" from="Minitel" to="." method="_on_Minitel_felix"]
+[connection signal="godot" from="Minitel" to="." method="_on_Minitel_godot"]
+[connection signal="gorille" from="Minitel" to="." method="_on_Minitel_gorille"]
+[connection signal="malo" from="Minitel" to="." method="_on_Minitel_malo"]
+[connection signal="monique" from="Minitel" to="." method="_on_Minitel_monique"]
+[connection signal="noe" from="Minitel" to="." method="_on_Minitel_noe"]
+[connection signal="usul" from="Minitel" to="." method="_on_Minitel_usul"]
+[connection signal="veronique" from="Minitel" to="." method="_on_Minitel_veronique"]
+[connection signal="achievement" from="Carton" to="." method="_on_Carton_achievement"]
+[connection signal="empty" from="Carton" to="." method="_on_Carton_empty"]
+[connection signal="achievement" from="Bouton" to="." method="_on_Bouton_achievement"]
