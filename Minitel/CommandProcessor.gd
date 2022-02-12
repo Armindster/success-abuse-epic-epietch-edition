@@ -45,6 +45,7 @@ var cy = 0
 var cz = 0
 
 var index = 0
+var index2 = 0
 
 var Types = load("res://Minitel/globals/Types.gd").new()
 
@@ -140,31 +141,35 @@ func process_command(input: String) -> String:
 		emit_signal("alphabet")
 		return Types.wrap_system_text("Unrecognized command - please try again.")
 	
-	match words:
-		"3615 godot":
-			return godot()
-		"3615 usul":
-			return usul()
-		"3615 gorille":
-			return gorille()
-		"3615 fanta":
-			return fanta()
-		"3615 véronique":
-			return veronique()
-		"3615 monique":
-			return monique()
-		"3615 briag":
-			return briag()
-		"3615 malo":
-			return malo()
-		"3615 noé":
-			return noe()
-		"3615 félix":
-			return felix()
-		"3615 annuaire":
-			return help()
-		_:
-			return Types.wrap_system_text("Unrecognized command - please try again.")
+	if (words == "3615 epietch" && index2 == 0):
+		index2 = 1
+		return godot()
+
+	if (index2 == 1):
+		match words:
+			"3615 usul":
+				return usul()
+			"3615 gorille":
+				return gorille()
+			"3615 fanta":
+				return fanta()
+			"3615 véronique":
+				return veronique()
+			"3615 monique":
+				return monique()
+			"3615 briag":
+				return briag()
+			"3615 malo":
+				return malo()
+			"3615 noé":
+				return noe()
+			"3615 félix":
+				return felix()
+			"3615 annuaire":
+				return help()
+			_:
+				return Types.wrap_system_text("Unrecognized command - please try again.")
+	return Types.wrap_system_text("The minitel is not start")
 
 func godot() -> String:
 	emit_signal("godot")
@@ -237,4 +242,8 @@ func help() -> String:
 		Types.wrap_item_text(" 3615 véronique "),
 		Types.wrap_item_text(" 3615 monique "),
 		Types.wrap_item_text(" 3615 annuaire "),
+		Types.wrap_item_text(" 3615 briag "),
+		Types.wrap_item_text(" 3615 malo "),
+		Types.wrap_item_text(" 3615 noé "),
+		Types.wrap_item_text(" 3615 félix "),
 	]).join("\n")
