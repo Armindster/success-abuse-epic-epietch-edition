@@ -8,10 +8,10 @@ var remove
 signal empty
 
 func _on_CartonBody_clickBox():
-	if unpack.empty() and upk == 5 :
+	if unpack.empty() and upk == 4 :
 		print("I think there is nothing left to unpack.")
 		emit_signal("empty")
-	else:
+	elif !unpack.empty():
 		open = randi() % 4
 		if open == 1:
 			remove = unpack.pop_at(randi() % (unpack.size()))
