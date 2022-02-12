@@ -176,13 +176,16 @@ func process_command(input: String) -> String:
 				return Types.wrap_system_text("Unrecognized command - please try again.")
 	return Types.wrap_system_text("The minitel is not runnig")
 
-func end():
+func end() -> String:
 	emit_signal("end")
+	return PoolStringArray([
+		Types.wrap_location_text("The minitel is not runnig")
+	]).join("\n")
 
 func godot() -> String:
 	emit_signal("godot")
 	return PoolStringArray([
-		Types.wrap_location_text(" Minitel is running "),
+		Types.wrap_location_text(" The minitel is running "),
 		Types.wrap_system_text("Now you can type '3615 annuaire' to see available number.")
 	]).join("\n")
 
