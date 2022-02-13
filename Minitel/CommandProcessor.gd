@@ -187,14 +187,14 @@ func process_command(input: String) -> String:
 				return help()
 			_:
 				return Types.wrap_system_text("Unrecognized command - please try again.")
-	return Types.wrap_location_text("The minitel is not runnig")
+	return Types.wrap_location_text("The minitel is not running")
 
 func end() -> String:
 	if achiOff:
 		emit_signal("end")
 		achiOff = false
 	return PoolStringArray([
-		Types.wrap_location_text("The minitel is not runnig")
+		Types.wrap_location_text("The minitel is not running")
 	]).join("\n")
 
 func godot() -> String:
