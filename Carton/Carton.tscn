@@ -1,8 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Carton/Carton.gd" type="Script" id=1]
 [ext_resource path="res://Carton/cartonpt1.png" type="Texture" id=2]
 [ext_resource path="res://Carton/CartonBody.gd" type="Script" id=3]
+[ext_resource path="res://Carton/image.jpg" type="Texture" id=4]
+[ext_resource path="res://Carton/istockphoto-959493662-170667a.png" type="Texture" id=5]
+[ext_resource path="res://Carton/pinpng.com-avion-png-20943.png" type="Texture" id=6]
+[ext_resource path="res://Carton/qp0tu8g5ks761.png" type="Texture" id=7]
+[ext_resource path="res://Carton/cat-pixel-art-Idees-designs-photo.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 53, 35 )
@@ -25,6 +30,36 @@ texture = ExtResource( 2 )
 hframes = 2
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( -3, -75 )
+scale = Vector2( 0.106771, 0.108696 )
+texture = ExtResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+visible = false
+position = Vector2( -6.00001, -89 )
+scale = Vector2( 0.228125, 0.22 )
+texture = ExtResource( 8 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+visible = false
+position = Vector2( -7, -80 )
+scale = Vector2( 0.395, 0.38 )
+texture = ExtResource( 5 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+visible = false
+position = Vector2( -11, -73 )
+scale = Vector2( 0.0856676, 0.105876 )
+texture = ExtResource( 6 )
+
+[node name="Sprite5" type="Sprite" parent="."]
+visible = false
+position = Vector2( -9.00002, -70 )
+scale = Vector2( 0.1825, 0.203804 )
+texture = ExtResource( 7 )
 
 [connection signal="clickBox" from="CartonBody" to="." method="_on_CartonBody_clickBox"]
 [connection signal="input_event" from="CartonBody" to="CartonBody" method="_on_Carton_input_event"]
