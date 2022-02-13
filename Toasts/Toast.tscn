@@ -27,7 +27,7 @@ extra_spacing_top = -6
 font_data = ExtResource( 2 )
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 145, 50 )
+extents = Vector2( 145, 51 )
 
 [node name="Achievement" type="Control"]
 rect_min_size = Vector2( 0, 96 )
@@ -38,10 +38,8 @@ __meta__ = {
 filepath = "res://Toasts/achievement.json"
 
 [node name="Panel" type="Panel" parent="."]
-margin_left = -145.0
-margin_top = -51.0
-margin_right = 145.0
-margin_bottom = 49.0
+margin_right = 290.0
+margin_bottom = 100.0
 size_flags_horizontal = 9
 size_flags_vertical = 9
 custom_styles/panel = SubResource( 4 )

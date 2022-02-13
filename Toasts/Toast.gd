@@ -44,17 +44,17 @@ func write_achievements():
 		file.store_string(dict.to_json())
 		file.close()
 
-func modify_achievement(achievement, validate):
+func modify_achievement(achievement, validate, animate):
+	if animate == true:
+		animation()
 	if (validate == false and dict[achievement].accomplished == 0):
 		locked_style()
 		popup.get_node("Name").set_text(dict[achievement].name)
 		popup.get_node("Description").set_text("? ? ? ? ? ? ? ? ? ?")
-		animation()
 	else:
 		popup.get_node("Name").set_text(dict[achievement].name)
 		popup.get_node("Description").set_text(dict[achievement].description)
 		dict[achievement].accomplished = 1
-		animation()
 
 func animation():
 	popup.show()
