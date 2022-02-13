@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
+[ext_resource path="res://Toasts/fonts/poco/Poco.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Toasts/Toast.tscn" type="PackedScene" id=2]
 
 [sub_resource type="GDScript" id=1]
@@ -55,8 +56,12 @@ func _on_VScrollBar_scrolling():
 
 func _on_Button_pressed():
 	emit_signal(\"goback\")
-	print(\"back\")
 "
+
+[sub_resource type="DynamicFont" id=6]
+size = 20
+extra_spacing_bottom = 10
+font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
@@ -72,10 +77,12 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="."]
-margin_left = 16.0
+margin_left = 8.0
 margin_top = 32.0
-margin_right = 80.0
+margin_right = 88.0
 margin_bottom = 96.0
+custom_fonts/font = SubResource( 6 )
+text = "Go Back"
 __meta__ = {
 "_edit_use_anchors_": false
 }
