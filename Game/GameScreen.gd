@@ -7,6 +7,7 @@ onready var Carton = get_node("Carton")
 var toast_count = 0
 var success_count = 0
 var too_much_toasts = false
+var achmenu = true
 
 func _ready():
 	randomize()
@@ -257,3 +258,19 @@ func _on_MainMenu_start_game():
 	toast.modify_achievement("bravo,_vous_etes_sur_sa:eee", true, true)
 	toast_count += 1
 	success_count += 1
+
+
+func _on_Button_pressed():
+	get_node("Achievement").visible = true
+	if achmenu:
+		get_node("ToastsContainer").add_child(load("res://Toasts/Toast.tscn").instance())
+		var toast = get_node("ToastsContainer").get_child(toast_count)
+		toast.connect("finished", self, "toast_end")
+		toast.modify_achievement("megalomanie", true, true)
+		toast_count += 1
+		success_count += 1
+		achmenu = false
+
+
+func _on_Achievement_goback():
+	get_node("Achievement").visible = false

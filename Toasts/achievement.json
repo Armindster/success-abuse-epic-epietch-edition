@@ -9,7 +9,7 @@
   "papers,_please":{"description":"Sortir le tiroir à tampon", "accomplished":0, "name":"Papers, please"},
   "ca_sert_a_rien,_il_n'y_a_pas_de_passeport":{"description":"Cliquer sur un tampon", "accomplished":0, "name":"Ça sert à rien, il n'y a pas de passeport"},
   "trop_de_toast_tue_le_toast":{"description":"Avoir trop toasts qui apparaissent à l'écran", "accomplished":0, "name":"Trop de toast tue le toast"},
-  "isaac_success":{"description":"Cliquer sur le ballon pendu", "accomplished":0, "name":"Isaac Success"},
+  "isaac_success":{"description":"Cliquer sur la photo d'Isaac Success", "accomplished":0, "name":"Isaac Success"},
   "real_platinum_gold":{"description":"Débloquer tout les Succès", "accomplished":0, "name":"Real Platinum Gold"},
   "toast":{"description":"Cliquer sur un toast", "accomplished":0, "name":"Toast"},
   "bravo,_tu_as_gagne_un_toast_!":{"description":"Avoir la fin énigme", "accomplished":0, "name":"Bravo, tu as gagné un toast !"},

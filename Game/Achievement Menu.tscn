@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Toasts/fonts/poco/Poco.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Toasts/Toast.tscn" type="PackedScene" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Control
@@ -75,6 +76,12 @@ script = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 506, 309.5 )
+scale = Vector2( 18.5, 11.5469 )
+texture = ExtResource( 3 )
 
 [node name="Button" type="Button" parent="."]
 margin_left = 8.0
