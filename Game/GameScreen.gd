@@ -6,19 +6,21 @@ onready var Carton = get_node("Carton")
 
 var toast_count = 0
 var success_count = 0
+var too_much_toasts = false
 
 func _ready():
 	randomize()
 
 func _process(delta):
 	var toast
-	if toast_count == 7:
+	if toast_count == 7 and not too_much_toasts:
 		get_node("ToastsContainer").add_child(load("res://Toasts/Toast.tscn").instance())
 		toast = get_node("ToastsContainer").get_child(toast_count)
 		toast.connect("finished", self, "toast_end")
 		toast.modify_achievement("trop_de_toast_tue_le_toast", true)
 		toast_count += 1
 		success_count += 1
+		too_much_toasts = true
 	if success_count == 50:
 		get_node("ToastsContainer").add_child(load("res://Toasts/Toast.tscn").instance())
 		toast = get_node("ToastsContainer").get_child(toast_count)
@@ -179,5 +181,18 @@ func _on_Carton_achievement():
 		toast = get_node("ToastsContainer").get_child(toast_count)
 		toast.connect("finished", self, "toast_end")
 		toast.modify_achievement("maintenant,_oui", true)
+		toast_count += 1
+		success_count += 1
+
+
+func _on_Telefax_fax():
+	var fax = get_node("Telefax").get_fax()
+	if fax == "XDdL":
+		get_node("Carton").add_Xav_in_Carton()
+	else:
+		get_node("ToastsContainer").add_child(load("res://Toasts/Toast.tscn").instance())
+		var toast = get_node("ToastsContainer").get_child(toast_count)
+		toast.connect("finished", self, "toast_end")
+		toast.modify_achievement(fax, true)
 		toast_count += 1
 		success_count += 1

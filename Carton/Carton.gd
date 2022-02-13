@@ -10,7 +10,7 @@ signal achievement
 signal empty
 
 func add_Xav_in_Carton():
-	unpack += "XDdL"
+	unpack.append("XDdL")
 
 func _on_CartonBody_clickBox():
 	if unpack.empty() and upk == 5 :

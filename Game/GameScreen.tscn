@@ -51,4 +51,5 @@ __meta__ = {
 [connection signal="veronique" from="Minitel" to="." method="_on_Minitel_veronique"]
 [connection signal="achievement" from="Carton" to="." method="_on_Carton_achievement"]
 [connection signal="empty" from="Carton" to="." method="_on_Carton_empty"]
+[connection signal="fax" from="Telefax" to="." method="_on_Telefax_fax"]
 [connection signal="achievement" from="Bouton" to="." method="_on_Bouton_achievement"]
