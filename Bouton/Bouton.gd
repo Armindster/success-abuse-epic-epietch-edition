@@ -33,7 +33,6 @@ signal achievement
 
 func _on_Button_pressed():
 	pressed += 1
-	get_node("Button/Sprite").frame = 1
 	if pressed >= 1 and pressed <= 20 or pressed == 42 or pressed == 50 or pressed == 999:
 		count += 1
 		print(pressed)
@@ -42,7 +41,3 @@ func _on_Button_pressed():
 
 func get_achievement():
 	return ach[count]
-
-
-func _on_Timer_timeout():
-	get_node("Button/Sprite").frame = 0
