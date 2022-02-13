@@ -27,7 +27,7 @@ signal end
 var Types = load(\"res://Minitel/globals/Types.gd\").new()
 
 func _ready() -> void:
-	game_info.create_response(Types.wrap_system_text(\"Welcome to Success Abuse : Epic Epietch Edition! You can type 'on' to start the minitel.\"))
+	game_info.create_response(Types.wrap_system_text(\"You can type 'on' to start the minitel.\"))
 
 func _on_Input_text_entered(new_text: String) -> void:
 	if new_text.empty():

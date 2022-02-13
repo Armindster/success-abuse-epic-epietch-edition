@@ -211,7 +211,7 @@ func usul() -> String:
 		emit_signal("usul")
 		achiUsul = false
 	return PoolStringArray([
-		Types.wrap_location_text(" Usul ")
+		Types.wrap_location_text(" Hey Usul ! I'm sending you this message to tell you that I'm a big fan of your work! You're a little too left for me but it does not matter! ")
 	]).join("\n")
 	
 func gorille() -> String:
@@ -219,7 +219,7 @@ func gorille() -> String:
 		emit_signal("gorille")
 		achiGorille = false
 	return PoolStringArray([
-		Types.wrap_location_text(" Gorille ")
+		Types.wrap_location_text(" MONKEY FLIP LETS GOOOOOOOOO ")
 	]).join("\n")
 	
 func fanta() -> String:
@@ -227,7 +227,7 @@ func fanta() -> String:
 		emit_signal("fanta")
 		achiFanta = false
 	return PoolStringArray([
-		Types.wrap_location_text(" Fanta ")
+		Types.wrap_location_text(" Hello Fanta! I saw what you told me about recently... \"Bitcoin\" right? Honestly I think it's a waste of time, we should focus on something else. Like coal! This is the energy of the FUTURE! ")
 	]).join("\n")
 	
 func veronique() -> String:
@@ -235,7 +235,7 @@ func veronique() -> String:
 		emit_signal("veronique")
 		achiVero = false
 	return PoolStringArray([
-		Types.wrap_location_text(" Véronique ")
+		Types.wrap_location_text(" Your music is not good. ")
 	]).join("\n")
 
 func monique() -> String:
@@ -243,7 +243,7 @@ func monique() -> String:
 		emit_signal("monique")
 		achiMonique = false
 	return PoolStringArray([
-		Types.wrap_location_text(" Monique ")
+		Types.wrap_location_text(" NO MONIQUE WE WILL NOT F*** TOGETHER! ")
 	]).join("\n")
 	
 func briag() -> String:
@@ -251,7 +251,7 @@ func briag() -> String:
 		emit_signal("briag")
 		achiBriag = false
 	return PoolStringArray([
-		Types.wrap_location_text(" A été pris à Keimyung ")
+		Types.wrap_location_text(" Damn man! I can't believe you got caught in Keimyung! I'm so happy for you! Remember to bring me back a souvenir! ")
 	]).join("\n")
 
 func malo() -> String:
@@ -259,7 +259,7 @@ func malo() -> String:
 		emit_signal("malo")
 		achiMalo = false
 	return PoolStringArray([
-		Types.wrap_location_text(" A eu grade A au DevOps ")
+		Types.wrap_location_text(" Dude there is a friend of mine, Axel, who lost his goldfish... do you know where he is? ")
 	]).join("\n")
 
 func noe() -> String:
@@ -267,7 +267,7 @@ func noe() -> String:
 		emit_signal("noe")
 		achiNoe = false
 	return PoolStringArray([
-		Types.wrap_location_text(" A un chien et un chat ")
+		Types.wrap_location_text(" Hey ! Just to tell you that working with you has been a great experience! Not sure we have the opportunity to work together again but if the opportunity arises, count on me! ")
 	]).join("\n")
 	
 func felix() -> String:
@@ -275,7 +275,7 @@ func felix() -> String:
 		emit_signal("felix")
 		achiFelix = false
 	return PoolStringArray([
-		Types.wrap_location_text(" A crée EPIETCH ")
+		Types.wrap_location_text(" You'll never guess what I found in an old box! Roboraptor! And the best part is that it still works! ")
 	]).join("\n")
 
 func help() -> String:
