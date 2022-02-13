@@ -8,7 +8,7 @@ V - "Le Triple Neuf": Cliquer 999 fois sur le bouton principal
 "Papers, please": Sortir le tiroir à tampon
 "Ça sert à rien, il n'y a pas de passeport": Cliquer sur un tampon
 V - "Trop de toast tue le toast": Avoir trop toasts qui apparaissent à l'écran
-"Isaac Success": Cliquer sur le ballon pendu"C'est un beau menu, hein ?
+V - "Isaac Success": Cliquer sur le ballon pendu"C'est un beau menu, hein ?
 "Real platinum gold": Débloquer tout les Succès
 "Toast": Cliquer sur un toast
 "Bravo, tu as gagné un toast !": Avoir la fin énigme
@@ -75,4 +75,4 @@ V - "Unpacked": Vider le carton
 "Bravo, vous avez gagné un sourire": :) (Succès random)
 "Just plain lucky": Vous aviez 1 chance sur 500000 toutes les secondes d'obtenir ce succès
 V - "Monke": Composer le 3615 Gorille
-"You feel motivated": Quote de merde
+V - "You feel motivated": Quote de merde
