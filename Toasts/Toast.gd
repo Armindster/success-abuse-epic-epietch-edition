@@ -5,7 +5,6 @@ signal finished
 export (String, FILE) var filepath
 var file = File.new()
 var dict = {}
-var already_played = false
 var mousebutton = InputEventMouseButton
 var mousemotion = InputEventMouseMotion
 onready var popup = get_node("Panel")

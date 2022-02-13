@@ -1,0 +1,721 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Toasts/Toast.tscn" type="PackedScene" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+export (String, FILE) var filepath
+var file = File.new()
+var dict = {}
+var text
+var i = 0
+var j = 0
+var k = 0
+
+signal goback
+
+func _ready():
+	if file.file_exists(\"res://Game/achievement.json\"):
+		file.open(\"res://Game/achievement.json\", file.READ)
+		text = file.get_as_text()
+		dict = parse_json(text)
+		file.close()
+	else:
+		file.open(filepath, file.READ)
+		text = file.get_as_text()
+		dict = parse_json(text)
+		if file.file_exists(\"res://Game/achievement.json\"):
+			file.open(\"res://Game/achievement.json\", file.WRITE)
+			file.store_string(dict.to_json())
+			file.close()
+	for id in dict:
+		if i < 27:
+			get_node(\"Liste/VBoxContainer\").get_child(i).modify_achievement(id, false, false)
+		elif i < 54:
+			get_node(\"Liste/VBoxContainer2\").get_child(i-27).modify_achievement(id, false, false)
+		elif i < 78:
+			get_node(\"Liste/VBoxContainer3\").get_child(i-54).modify_achievement(id, false, false)
+		i += 1
+
+var mem = 1
+var pos = Vector2(96, 16)
+
+func _on_VScrollBar_scrolling():
+	var value = get_node(\"VScrollBar\").get(\"value\")
+	if value == 0:
+		get_node(\"Liste\").set_position(pos)
+	elif value > mem:
+		get_node(\"Liste\").set_position(Vector2(pos[0], pos[1] - 108 * (value + 1)))
+		mem = value
+	elif value < mem:
+		get_node(\"Liste\").set_position(Vector2(pos[0], pos[1] - 108 * (value + 1)))
+		mem = value
+
+
+func _on_Button_pressed():
+	emit_signal(\"goback\")
+	print(\"back\")
+"
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 144, 52 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 16.0
+margin_top = 32.0
+margin_right = 80.0
+margin_bottom = 96.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Liste" type="HBoxContainer" parent="."]
+margin_left = 96.0
+margin_top = 16.0
+margin_right = 984.0
+margin_bottom = 3200.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Liste"]
+margin_right = 293.0
+margin_bottom = 3184.0
+size_flags_horizontal = 3
+
+[node name="Achievement" parent="Liste/VBoxContainer" instance=ExtResource( 2 )]
+margin_bottom = 114.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+
+[node name="Achievement2" parent="Liste/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 118.0
+margin_bottom = 214.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="Achievement3" parent="Liste/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 236.0
+margin_bottom = 332.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="Achievement4" parent="Liste/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 354.0
+margin_bottom = 450.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="Achievement5" parent="Liste/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 472.0
+margin_bottom = 568.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="Achievement6" parent="Liste/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 590.0
+margin_bottom = 686.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="Achievement7" parent="Liste/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 708.0
+margin_bottom = 804.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="Achievement8" parent="Liste/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 826.0
+margin_bottom = 922.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="Achievement9" parent="Liste/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 944.0
+margin_bottom = 1040.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="Achievement10" parent="Liste/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 1062.0
+margin_bottom = 1158.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="Achievement11" parent="Liste/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 1180.0
+margin_bottom = 1276.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="Achievement12" parent="Liste/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 1298.0
+margin_bottom = 1394.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="Achievement13" parent="Liste/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 1416.0
+margin_bottom = 1512.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="Achievement14" parent="Liste/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 1534.0
+margin_bottom = 1630.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="Achievement15" parent="Liste/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 1653.0
+margin_bottom = 1749.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="Achievement16" parent="Liste/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 1771.0
+margin_bottom = 1867.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="Achievement17" parent="Liste/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 1889.0
+margin_bottom = 1985.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="Achievement18" parent="Liste/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 2007.0
+margin_bottom = 2103.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="Achievement19" parent="Liste/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 2125.0
+margin_bottom = 2221.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="Achievement20" parent="Liste/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 2243.0
+margin_bottom = 2339.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="Achievement21" parent="Liste/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 2361.0
+margin_bottom = 2457.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="Achievement22" parent="Liste/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 2479.0
+margin_bottom = 2575.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="Achievement23" parent="Liste/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 2597.0
+margin_bottom = 2693.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="Achievement24" parent="Liste/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 2715.0
+margin_bottom = 2811.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="Achievement25" parent="Liste/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 2833.0
+margin_bottom = 2929.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="Achievement26" parent="Liste/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 2951.0
+margin_bottom = 3047.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="Achievement27" parent="Liste/VBoxContainer" instance=ExtResource( 2 )]
+margin_top = 3069.0
+margin_bottom = 3165.0
+size_flags_horizontal = 0
+size_flags_vertical = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Liste"]
+margin_left = 297.0
+margin_right = 590.0
+margin_bottom = 3184.0
+size_flags_horizontal = 3
+
+[node name="Achievement" parent="Liste/VBoxContainer2" instance=ExtResource( 2 )]
+margin_right = 293.0
+margin_bottom = 96.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement2" parent="Liste/VBoxContainer2" instance=ExtResource( 2 )]
+margin_top = 118.0
+margin_right = 293.0
+margin_bottom = 214.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement3" parent="Liste/VBoxContainer2" instance=ExtResource( 2 )]
+margin_top = 236.0
+margin_right = 293.0
+margin_bottom = 332.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement4" parent="Liste/VBoxContainer2" instance=ExtResource( 2 )]
+margin_top = 354.0
+margin_right = 293.0
+margin_bottom = 450.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement5" parent="Liste/VBoxContainer2" instance=ExtResource( 2 )]
+margin_top = 472.0
+margin_right = 293.0
+margin_bottom = 568.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement6" parent="Liste/VBoxContainer2" instance=ExtResource( 2 )]
+margin_top = 590.0
+margin_right = 293.0
+margin_bottom = 686.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement7" parent="Liste/VBoxContainer2" instance=ExtResource( 2 )]
+margin_top = 708.0
+margin_right = 293.0
+margin_bottom = 804.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement8" parent="Liste/VBoxContainer2" instance=ExtResource( 2 )]
+margin_top = 826.0
+margin_right = 293.0
+margin_bottom = 922.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement9" parent="Liste/VBoxContainer2" instance=ExtResource( 2 )]
+margin_top = 944.0
+margin_right = 293.0
+margin_bottom = 1040.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement10" parent="Liste/VBoxContainer2" instance=ExtResource( 2 )]
+margin_top = 1062.0
+margin_right = 293.0
+margin_bottom = 1158.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement11" parent="Liste/VBoxContainer2" instance=ExtResource( 2 )]
+margin_top = 1180.0
+margin_right = 293.0
+margin_bottom = 1276.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement12" parent="Liste/VBoxContainer2" instance=ExtResource( 2 )]
+margin_top = 1298.0
+margin_right = 293.0
+margin_bottom = 1394.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement13" parent="Liste/VBoxContainer2" instance=ExtResource( 2 )]
+margin_top = 1416.0
+margin_right = 293.0
+margin_bottom = 1512.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement14" parent="Liste/VBoxContainer2" instance=ExtResource( 2 )]
+margin_top = 1534.0
+margin_right = 293.0
+margin_bottom = 1630.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement15" parent="Liste/VBoxContainer2" instance=ExtResource( 2 )]
+margin_top = 1653.0
+margin_right = 293.0
+margin_bottom = 1749.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement16" parent="Liste/VBoxContainer2" instance=ExtResource( 2 )]
+margin_top = 1771.0
+margin_right = 293.0
+margin_bottom = 1867.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement17" parent="Liste/VBoxContainer2" instance=ExtResource( 2 )]
+margin_top = 1889.0
+margin_right = 293.0
+margin_bottom = 1985.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement18" parent="Liste/VBoxContainer2" instance=ExtResource( 2 )]
+margin_top = 2007.0
+margin_right = 293.0
+margin_bottom = 2103.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement19" parent="Liste/VBoxContainer2" instance=ExtResource( 2 )]
+margin_top = 2125.0
+margin_right = 293.0
+margin_bottom = 2221.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement20" parent="Liste/VBoxContainer2" instance=ExtResource( 2 )]
+margin_top = 2243.0
+margin_right = 293.0
+margin_bottom = 2339.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement21" parent="Liste/VBoxContainer2" instance=ExtResource( 2 )]
+margin_top = 2361.0
+margin_right = 293.0
+margin_bottom = 2457.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement22" parent="Liste/VBoxContainer2" instance=ExtResource( 2 )]
+margin_top = 2479.0
+margin_right = 293.0
+margin_bottom = 2575.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement23" parent="Liste/VBoxContainer2" instance=ExtResource( 2 )]
+margin_top = 2597.0
+margin_right = 293.0
+margin_bottom = 2693.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement24" parent="Liste/VBoxContainer2" instance=ExtResource( 2 )]
+margin_top = 2715.0
+margin_right = 293.0
+margin_bottom = 2811.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement25" parent="Liste/VBoxContainer2" instance=ExtResource( 2 )]
+margin_top = 2833.0
+margin_right = 293.0
+margin_bottom = 2929.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement26" parent="Liste/VBoxContainer2" instance=ExtResource( 2 )]
+margin_top = 2951.0
+margin_right = 293.0
+margin_bottom = 3047.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement27" parent="Liste/VBoxContainer2" instance=ExtResource( 2 )]
+margin_top = 3069.0
+margin_right = 293.0
+margin_bottom = 3165.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Liste"]
+margin_left = 594.0
+margin_right = 888.0
+margin_bottom = 3184.0
+size_flags_horizontal = 3
+
+[node name="Achievement" parent="Liste/VBoxContainer3" instance=ExtResource( 2 )]
+margin_right = 294.0
+margin_bottom = 96.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement2" parent="Liste/VBoxContainer3" instance=ExtResource( 2 )]
+margin_top = 118.0
+margin_right = 294.0
+margin_bottom = 214.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement3" parent="Liste/VBoxContainer3" instance=ExtResource( 2 )]
+margin_top = 236.0
+margin_right = 294.0
+margin_bottom = 332.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement4" parent="Liste/VBoxContainer3" instance=ExtResource( 2 )]
+margin_top = 354.0
+margin_right = 294.0
+margin_bottom = 450.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement5" parent="Liste/VBoxContainer3" instance=ExtResource( 2 )]
+margin_top = 472.0
+margin_right = 294.0
+margin_bottom = 568.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement6" parent="Liste/VBoxContainer3" instance=ExtResource( 2 )]
+margin_top = 590.0
+margin_right = 294.0
+margin_bottom = 686.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement7" parent="Liste/VBoxContainer3" instance=ExtResource( 2 )]
+margin_top = 708.0
+margin_right = 294.0
+margin_bottom = 804.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement8" parent="Liste/VBoxContainer3" instance=ExtResource( 2 )]
+margin_top = 826.0
+margin_right = 294.0
+margin_bottom = 922.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement9" parent="Liste/VBoxContainer3" instance=ExtResource( 2 )]
+margin_top = 944.0
+margin_right = 294.0
+margin_bottom = 1040.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement10" parent="Liste/VBoxContainer3" instance=ExtResource( 2 )]
+margin_top = 1062.0
+margin_right = 294.0
+margin_bottom = 1158.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement11" parent="Liste/VBoxContainer3" instance=ExtResource( 2 )]
+margin_top = 1180.0
+margin_right = 294.0
+margin_bottom = 1276.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement12" parent="Liste/VBoxContainer3" instance=ExtResource( 2 )]
+margin_top = 1298.0
+margin_right = 294.0
+margin_bottom = 1394.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement13" parent="Liste/VBoxContainer3" instance=ExtResource( 2 )]
+margin_top = 1416.0
+margin_right = 294.0
+margin_bottom = 1512.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement14" parent="Liste/VBoxContainer3" instance=ExtResource( 2 )]
+margin_top = 1534.0
+margin_right = 294.0
+margin_bottom = 1630.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement15" parent="Liste/VBoxContainer3" instance=ExtResource( 2 )]
+margin_top = 1653.0
+margin_right = 294.0
+margin_bottom = 1749.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement16" parent="Liste/VBoxContainer3" instance=ExtResource( 2 )]
+margin_top = 1771.0
+margin_right = 294.0
+margin_bottom = 1867.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement17" parent="Liste/VBoxContainer3" instance=ExtResource( 2 )]
+margin_top = 1889.0
+margin_right = 294.0
+margin_bottom = 1985.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement18" parent="Liste/VBoxContainer3" instance=ExtResource( 2 )]
+margin_top = 2007.0
+margin_right = 294.0
+margin_bottom = 2103.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement19" parent="Liste/VBoxContainer3" instance=ExtResource( 2 )]
+margin_top = 2125.0
+margin_right = 294.0
+margin_bottom = 2221.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement20" parent="Liste/VBoxContainer3" instance=ExtResource( 2 )]
+margin_top = 2243.0
+margin_right = 294.0
+margin_bottom = 2339.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement21" parent="Liste/VBoxContainer3" instance=ExtResource( 2 )]
+margin_top = 2361.0
+margin_right = 294.0
+margin_bottom = 2457.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement22" parent="Liste/VBoxContainer3" instance=ExtResource( 2 )]
+margin_top = 2479.0
+margin_right = 294.0
+margin_bottom = 2575.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement23" parent="Liste/VBoxContainer3" instance=ExtResource( 2 )]
+margin_top = 2597.0
+margin_right = 294.0
+margin_bottom = 2693.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement24" parent="Liste/VBoxContainer3" instance=ExtResource( 2 )]
+margin_top = 2715.0
+margin_right = 294.0
+margin_bottom = 2811.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+
+[node name="Achievement25" type="Control" parent="Liste/VBoxContainer3"]
+margin_top = 2833.0
+margin_right = 294.0
+margin_bottom = 2929.0
+rect_min_size = Vector2( 0, 96 )
+size_flags_horizontal = 3
+size_flags_vertical = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Liste/VBoxContainer3/Achievement25"]
+margin_right = 290.0
+margin_bottom = 100.0
+size_flags_horizontal = 9
+size_flags_vertical = 9
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D" type="Area2D" parent="Liste/VBoxContainer3/Achievement25/Panel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Liste/VBoxContainer3/Achievement25/Panel/Area2D"]
+position = Vector2( 145, 50 )
+shape = SubResource( 5 )
+
+[node name="Achievement26" type="Control" parent="Liste/VBoxContainer3"]
+margin_top = 2951.0
+margin_right = 294.0
+margin_bottom = 3047.0
+rect_min_size = Vector2( 0, 96 )
+size_flags_horizontal = 3
+size_flags_vertical = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Liste/VBoxContainer3/Achievement26"]
+margin_right = 290.0
+margin_bottom = 100.0
+size_flags_horizontal = 9
+size_flags_vertical = 9
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D" type="Area2D" parent="Liste/VBoxContainer3/Achievement26/Panel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Liste/VBoxContainer3/Achievement26/Panel/Area2D"]
+position = Vector2( 145, 50 )
+shape = SubResource( 5 )
+
+[node name="Achievement27" type="Control" parent="Liste/VBoxContainer3"]
+margin_top = 3069.0
+margin_right = 294.0
+margin_bottom = 3165.0
+rect_min_size = Vector2( 0, 96 )
+size_flags_horizontal = 3
+size_flags_vertical = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Liste/VBoxContainer3/Achievement27"]
+margin_right = 290.0
+margin_bottom = 100.0
+size_flags_horizontal = 9
+size_flags_vertical = 9
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D" type="Area2D" parent="Liste/VBoxContainer3/Achievement27/Panel"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Liste/VBoxContainer3/Achievement27/Panel/Area2D"]
+position = Vector2( 145, 50 )
+shape = SubResource( 5 )
+
+[node name="VScrollBar" type="VScrollBar" parent="."]
+margin_left = 996.0
+margin_top = 16.0
+margin_right = 1008.0
+margin_bottom = 584.0
+max_value = 24.0
+step = 1.0
+page = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="scrolling" from="VScrollBar" to="." method="_on_VScrollBar_scrolling"]
