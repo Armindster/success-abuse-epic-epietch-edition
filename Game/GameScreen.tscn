@@ -39,7 +39,6 @@ margin_right = 424.0
 margin_bottom = 344.0
 
 [node name="MainMenu" parent="." instance=ExtResource( 7 )]
-visible = false
 
 [node name="ToastsContainer" type="VBoxContainer" parent="."]
 margin_left = 1024.0
