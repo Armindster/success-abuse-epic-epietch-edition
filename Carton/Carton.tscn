@@ -5,7 +5,7 @@
 [ext_resource path="res://Carton/CartonBody.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 150.25, 74.25 )
+extents = Vector2( 53, 35 )
 
 [node name="Carton" type="Node2D"]
 script = ExtResource( 1 )
@@ -15,7 +15,7 @@ input_pickable = true
 script = ExtResource( 3 )
 
 [node name="CollisionCarton" type="CollisionShape2D" parent="CartonBody"]
-position = Vector2( -8, 10.5 )
+position = Vector2( -8, 11 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="CartonBody"]

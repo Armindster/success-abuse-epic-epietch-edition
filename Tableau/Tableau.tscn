@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Tableau/New Piskel.png" type="Texture" id=1]
 [ext_resource path="res://Tableau/Tableau.gd" type="Script" id=2]
@@ -7,7 +7,8 @@
 [ext_resource path="res://Tableau/Area2DJeff.gd" type="Script" id=5]
 [ext_resource path="res://Tableau/pin.png" type="Texture" id=6]
 [ext_resource path="res://Tableau/isaac success.jpg" type="Texture" id=7]
-[ext_resource path="res://Tableau/post-it.png" type="Texture" id=8]
+[ext_resource path="res://Tableau/quote.png" type="Texture" id=8]
+[ext_resource path="res://Tableau/post-it.png" type="Texture" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24, 40 )
@@ -46,9 +47,9 @@ position = Vector2( 104.5, 162.5 )
 shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="Area2DQuote"]
-position = Vector2( 105, 163 )
-scale = Vector2( 1.55, 4.66 )
-texture = ExtResource( 1 )
+position = Vector2( 104.5, 162.5 )
+scale = Vector2( 0.294922, 0.763333 )
+texture = ExtResource( 8 )
 
 [node name="Area2DJeff" type="Area2D" parent="."]
 position = Vector2( -40, 24 )
@@ -61,7 +62,7 @@ shape = SubResource( 3 )
 [node name="Sprite" type="Sprite" parent="Area2DJeff"]
 position = Vector2( 458.75, 162 )
 scale = Vector2( 0.585, 0.6 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 479, 23 )
