@@ -70,6 +70,30 @@ position = Vector2( 472, 24 )
 scale = Vector2( 0.08, 0.0800001 )
 texture = ExtResource( 6 )
 
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 211, 147 )
+scale = Vector2( 0.08, 0.0800001 )
+texture = ExtResource( 6 )
+offset = Vector2( -450, -1175 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 212, 366 )
+scale = Vector2( 0.08, 0.0800001 )
+texture = ExtResource( 6 )
+offset = Vector2( -450, -1175 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 69, 366 )
+scale = Vector2( 0.08, 0.0800001 )
+texture = ExtResource( 6 )
+offset = Vector2( -450, -1175 )
+
+[node name="Sprite5" type="Sprite" parent="."]
+position = Vector2( 70, 148 )
+scale = Vector2( 0.08, 0.0800001 )
+texture = ExtResource( 6 )
+offset = Vector2( -450, -1175 )
+
 [connection signal="clickIsaac" from="Area2DIsaac" to="." method="_on_Area2DIsaac_clickIsaac"]
 [connection signal="input_event" from="Area2DIsaac" to="Area2DIsaac" method="_on_Area2DIsaac_input_event"]
 [connection signal="clickQuote" from="Area2DQuote" to="." method="_on_Area2DQuote_clickQuote"]
