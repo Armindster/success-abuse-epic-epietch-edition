@@ -5,6 +5,7 @@ var open = 0
 var upk = 0
 var remove
 var func_called = true
+onready var timer = get_node("Timer")
 
 signal achievement
 signal empty
@@ -20,6 +21,8 @@ func _on_CartonBody_clickBox():
 	elif !unpack.empty():
 		open = randi() % 5
 		print(func_called)
+		get_node("CartonBody/Sprite").frame = 1
+		timer.start()
 		if func_called and open == 1:
 			remove = unpack.pop_at(randi() % (unpack.size()))
 			print(remove)
@@ -32,3 +35,7 @@ func _on_CartonBody_clickBox():
 func return_unpacked_object():
 	func_called = true
 	return remove
+
+
+func _on_Timer_timeout():
+	get_node("CartonBody/Sprite").frame = 0

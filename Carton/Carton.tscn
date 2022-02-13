@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Carton/Carton.gd" type="Script" id=1]
-[ext_resource path="res://Carton/New Piskel.png" type="Texture" id=2]
+[ext_resource path="res://Carton/cartonpt1.png" type="Texture" id=2]
 [ext_resource path="res://Carton/CartonBody.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 150.25, 74.25 )
+extents = Vector2( 53, 34.5 )
 
 [node name="Carton" type="Node2D"]
 script = ExtResource( 1 )
@@ -15,11 +15,17 @@ input_pickable = true
 script = ExtResource( 3 )
 
 [node name="CollisionCarton" type="CollisionShape2D" parent="CartonBody"]
+position = Vector2( -8, 10.5 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="CartonBody"]
-scale = Vector2( 3.01, 2.98 )
+position = Vector2( 1.00136e-05, -4.76837e-07 )
+scale = Vector2( 0.666667, 0.74 )
 texture = ExtResource( 2 )
+hframes = 2
+
+[node name="Timer" type="Timer" parent="."]
 
 [connection signal="clickBox" from="CartonBody" to="." method="_on_CartonBody_clickBox"]
 [connection signal="input_event" from="CartonBody" to="CartonBody" method="_on_Carton_input_event"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
