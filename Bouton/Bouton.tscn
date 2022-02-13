@@ -11,20 +11,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="TextureButton" parent="."]
 anchor_right = 1.0
 margin_right = -960.0
 margin_bottom = 63.0
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Sprite" type="Sprite" parent="Button"]
-position = Vector2( 32, 32 )
-scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 1 )
-hframes = 2
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 1 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.25
