@@ -7,7 +7,7 @@
 [ext_resource path="res://Tableau/Area2DJeff.gd" type="Script" id=5]
 [ext_resource path="res://Tableau/pin.png" type="Texture" id=6]
 [ext_resource path="res://Tableau/isaac success.jpg" type="Texture" id=7]
-[ext_resource path="res://Tableau/pixil-frame-0(8).png" type="Texture" id=8]
+[ext_resource path="res://Tableau/post-it.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24, 40 )
