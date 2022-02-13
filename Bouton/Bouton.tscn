@@ -13,7 +13,7 @@ __meta__ = {
 
 [node name="Button" type="Button" parent="."]
 anchor_right = 1.0
-margin_right = -976.0
+margin_right = -960.0
 margin_bottom = 63.0
 flat = true
 __meta__ = {
@@ -21,6 +21,7 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="Button"]
+position = Vector2( 32, 32 )
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 1 )
 hframes = 2

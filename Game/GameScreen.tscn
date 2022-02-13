@@ -33,10 +33,10 @@ position = Vector2( 240, 544 )
 position = Vector2( 256, 352 )
 
 [node name="Bouton" parent="." instance=ExtResource( 5 )]
-margin_left = 424.0
-margin_top = 344.0
-margin_right = 424.0
-margin_bottom = 344.0
+margin_left = 416.0
+margin_top = 320.0
+margin_right = 416.0
+margin_bottom = 320.0
 
 [node name="MainMenu" parent="." instance=ExtResource( 7 )]
 
