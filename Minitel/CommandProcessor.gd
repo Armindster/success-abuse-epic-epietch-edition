@@ -16,6 +16,19 @@ signal malo
 signal noe
 signal end
 
+var achiOn = true
+var achiOff = true
+var achiGorille = true
+var achiFanta = true
+var achiVero = true
+var achiMonique = true
+var achiAlpha = true
+var achiUsul = true
+var achiBriag = true
+var achiFelix = true
+var achiMalo = true
+var achiNoe = true
+
 var cpt = 0
 
 var ca = 0
@@ -177,68 +190,90 @@ func process_command(input: String) -> String:
 	return Types.wrap_location_text("The minitel is not runnig")
 
 func end() -> String:
-	emit_signal("end")
+	if achiOff:
+		emit_signal("end")
+		achiOff = false
 	return PoolStringArray([
 		Types.wrap_location_text("The minitel is not runnig")
 	]).join("\n")
 
 func godot() -> String:
-	emit_signal("godot")
+	if achiOn:
+		emit_signal("godot")
+		achiOn = false
 	return PoolStringArray([
 		Types.wrap_location_text(" The minitel is running "),
 		Types.wrap_system_text("Now you can type '3615 annuaire' to see available number.")
 	]).join("\n")
 
 func usul() -> String:
-	emit_signal("usul")
+	if achiUsul:
+		emit_signal("usul")
+		achiUsul = false
 	return PoolStringArray([
 		Types.wrap_location_text(" Usul ")
 	]).join("\n")
 	
 func gorille() -> String:
-	emit_signal("gorille")
+	if achiGorille:
+		emit_signal("gorille")
+		achiGorille = false
 	return PoolStringArray([
 		Types.wrap_location_text(" Gorille ")
 	]).join("\n")
 	
 func fanta() -> String:
-	emit_signal("fanta")
+	if achiFanta:
+		emit_signal("fanta")
+		achiFanta = false
 	return PoolStringArray([
 		Types.wrap_location_text(" Fanta ")
 	]).join("\n")
 	
 func veronique() -> String:
-	emit_signal("veronique")
+	if achiVero:
+		emit_signal("veronique")
+		achiVero = false
 	return PoolStringArray([
 		Types.wrap_location_text(" Véronique ")
 	]).join("\n")
 
 func monique() -> String:
-	emit_signal("monique")
+	if achiMonique:
+		emit_signal("monique")
+		achiMonique = false
 	return PoolStringArray([
 		Types.wrap_location_text(" Monique ")
 	]).join("\n")
 	
 func briag() -> String:
-	emit_signal("briag")
+	if achiBriag:
+		emit_signal("briag")
+		achiBriag = false
 	return PoolStringArray([
 		Types.wrap_location_text(" A été pris à Keimyung ")
 	]).join("\n")
 
 func malo() -> String:
-	emit_signal("malo")
+	if achiMalo:
+		emit_signal("malo")
+		achiMalo = false
 	return PoolStringArray([
 		Types.wrap_location_text(" A eu grade A au DevOps ")
 	]).join("\n")
 
 func noe() -> String:
-	emit_signal("noe")
+	if achiNoe:
+		emit_signal("noe")
+		achiNoe = false
 	return PoolStringArray([
 		Types.wrap_location_text(" A un chien et un chat ")
 	]).join("\n")
 	
 func felix() -> String:
-	emit_signal("felix")
+	if achiFelix:
+		emit_signal("felix")
+		achiFelix = false
 	return PoolStringArray([
 		Types.wrap_location_text(" A crée EPIETCH ")
 	]).join("\n")
