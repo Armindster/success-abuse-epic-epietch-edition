@@ -16,6 +16,7 @@ func _on_CartonBody_clickBox():
 	if unpack.empty() and upk == 5 :
 		print("I think there is nothing left to unpack.")
 		emit_signal("empty")
+		get_node("CartonBody/CollisionCarton").disabled = true
 	elif !unpack.empty():
 		open = randi() % 5
 		print(func_called)
